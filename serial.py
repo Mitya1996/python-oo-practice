@@ -22,13 +22,19 @@ class SerialGenerator:
     def __init__(self, start):
         """initializes instance"""
         self.start = start
-        self.cur_num = start - 1
+        self.cur_num = start
+
+    def __repr__(self):
+        """Show representation."""
+
+        return f"<SerialGenerator start={self.start} cur_num={self.cur_num}>"
+
 
     def generate(self):
         """generates a new number"""
         self.cur_num += 1
-        return self.cur_num
+        return self.cur_num - 1
 
     def reset(self):
         """resets count"""
-        self.cur_num = self.start - 1
+        self.cur_num = self.start
