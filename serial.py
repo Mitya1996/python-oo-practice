@@ -19,4 +19,16 @@ class SerialGenerator:
     >>> serial.generate()
     100
     """
+    def __init__(self, start):
+        """initializes instance"""
+        self.start = start
+        self.cur_num = start - 1
 
+    def generate(self):
+        """generates a new number"""
+        self.cur_num += 1
+        return self.cur_num
+
+    def reset(self):
+        """resets count"""
+        self.cur_num = self.start - 1
